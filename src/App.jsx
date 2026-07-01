@@ -440,7 +440,7 @@ export default function ProfileCard() {
                         flexShrink:0,
                         overflow:"hidden",
                       }}>
-                       <img src={`../public/${p.icon}.jpeg`} alt={p.label} width={35}  />
+                       <img src={`./${p.icon}.jpeg`} alt={p.label} width={35}  />
                       </div>
                       <div>
                         <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:2 }}>
