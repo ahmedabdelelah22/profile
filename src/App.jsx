@@ -123,6 +123,7 @@ const PROFILE = {
   location: "Mansoura, Egypt",
   bio: "Building elegant, production-ready web apps with React · Node.js · MongoDB.",
   initials: "AA",
+  photo:"ahmed",
   taps: 248,
   rawPhone: "+201090949310",
   rawEmail: "ahmedabdelelah909493@gmail.com",
@@ -247,7 +248,9 @@ export default function ProfileCard() {
   };
 
   return (
-    <main style={{ minHeight:"100vh", background:C.bg, display:"flex", justifyContent:"center", padding:"20px 16px 56px", fontFamily:"'Inter',sans-serif" }}>
+    <main style={{ minHeight:"100vh", background:C.bg, display:"flex", justifyContent:"center",
+    //  padding:"20px 16px 56px", 
+     fontFamily:"'Inter',sans-serif" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
         *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
@@ -274,15 +277,15 @@ export default function ProfileCard() {
       <div style={{ width:"100%", maxWidth:400 }}>
 
         {/* ════ CARD ════ */}
-        <div style={{
+        {/* <div style={{
           background:C.card,
           border:`1px solid ${C.cardBorder}`,
           borderRadius:24, overflow:"hidden",
           boxShadow:"0 28px 56px -12px rgba(0,0,0,0.65)",
-        }}>
+        }}> */}
 
           {/* Gold top stripe */}
-          <div style={{ height:3, background:`linear-gradient(90deg,transparent,${C.gold},transparent)` }} />
+          <div style={{ height:4, background:`linear-gradient(90deg,transparent,${C.gold},transparent)` }} />
 
           {/* ── HEADER ── */}
           <header style={{ padding:"30px 24px 5px", textAlign:"center" }}>
@@ -296,10 +299,12 @@ export default function ProfileCard() {
                 border:`1px solid ${C.cardBorder}`,
                 display:"flex", alignItems:"center", justifyContent:"center",
                 position:"relative", zIndex:2,
+                overflow:"hidden",
               }}>
-                <span style={{ fontFamily:"'Space Grotesk',sans-serif", fontSize:30, fontWeight:600, color:C.gold }}>
+                {/* <span style={{ fontFamily:"'Space Grotesk',sans-serif", fontSize:30, fontWeight:600, color:C.gold }}>
                   {PROFILE.initials}
-                </span>
+                </span> */}
+                <img src={`./${PROFILE.photo}.png`} alt={PROFILE.name} style={{ width:"100%", height:"100%", objectFit:"cover", borderRadius:"50%" }} /> 
               </div>
             </div>
 
@@ -486,7 +491,7 @@ export default function ProfileCard() {
             </a>
           </div>
 
-        </div>
+        {/* </div> */}
 
         {/* ── Footer ── */}
         <footer style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:8, padding:"20px 0 0" }}>
