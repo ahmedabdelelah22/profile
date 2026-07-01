@@ -1332,25 +1332,7 @@ export default function ProfileCard() {
         </header>
 
         {/* ─── ACTION BUTTONS ─── */}
-        <div style={{ padding:"0 20px 24px", display:"flex", gap:10 }}>
-          <button className="sbtn" onClick={handleSaveContact} style={{
-            flex:1, display:"flex", alignItems:"center", justifyContent:"center", gap:7,
-            background:C.gold, border:"none", borderRadius:12, padding:"13px 0", cursor:"pointer",
-          }}>
-            <Smartphone size={15} strokeWidth={2.2} color="#0A0A0A"/>
-            <span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:700, color:"#0A0A0A" }}>Save Contact</span>
-          </button>
-          <button className="shbtn" onClick={shareProfile} style={{
-            flex:1, display:"flex", alignItems:"center", justifyContent:"center", gap:7,
-            background:C.pill, border:`1px solid ${C.pillBorder}`, borderRadius:12, padding:"13px 0", cursor:"pointer",
-          }}>
-            {shared
-              ? <><Check size={15} strokeWidth={2.5} color={C.gold}/><span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:600, color:C.gold }}>Copied!</span></>
-              : <><Share2 size={15} strokeWidth={1.8} color={C.textSub}/><span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:600, color:C.textSub }}>Share Profile</span></>
-            }
-          </button>
-        </div>
-
+     
         {/* ─── SOCIALS ─── */}
         <div style={{ padding:"0 20px 24px" }}>
           <GoldDivider label="Find me on"/>
@@ -1416,6 +1398,24 @@ export default function ProfileCard() {
               <PaymentCard key={p.id} p={p} copied={copied} shared={shared} onCopy={handleCopy} onShare={handlePayShare} onOpen={handlePayOpen}/>
             ))}
           </div>
+        </div>
+   <div style={{ padding:"0 20px 24px", display:"flex", gap:10 }}>
+          <button className="sbtn" onClick={handleSaveContact} style={{
+            flex:1, display:"flex", alignItems:"center", justifyContent:"center", gap:7,
+            background:C.gold, border:"none", borderRadius:12, padding:"13px 0", cursor:"pointer",
+          }}>
+            <Smartphone size={15} strokeWidth={2.2} color="#0A0A0A"/>
+            <span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:700, color:"#0A0A0A" }}>Save Contact</span>
+          </button>
+          <button className="shbtn" onClick={shareProfile} style={{
+            flex:1, display:"flex", alignItems:"center", justifyContent:"center", gap:7,
+            background:C.pill, border:`1px solid ${C.pillBorder}`, borderRadius:12, padding:"13px 0", cursor:"pointer",
+          }}>
+            {shared
+              ? <><Check size={15} strokeWidth={2.5} color={C.gold}/><span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:600, color:C.gold }}>Copied!</span></>
+              : <><Share2 size={15} strokeWidth={1.8} color={C.textSub}/><span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:600, color:C.textSub }}>Share Profile</span></>
+            }
+          </button>
         </div>
 
         {/* ─── FOOTER ─── */}
