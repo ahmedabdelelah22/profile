@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Phone, Mail, Smartphone, FileText, MapPin, Copy, Check } from "lucide-react";
+import { Phone, Mail, Smartphone, FileText, MapPin, Copy, Check, Share2 } from "lucide-react";
 
 // ─── Custom Brand Icons ────────────────────────────────────────────────────
 export function InstagramIcon({ size = 24, color = "currentColor" }) {
@@ -230,7 +230,30 @@ export default function ProfileCard() {
     setCopied(id);
     setTimeout(() => setCopied(null), 1800);
   };
+const shareProfile = async () => {
+  const url = "https://profile-inky-eight-50.vercel.app/";
 
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: PROFILE.name,
+        text: `${PROFILE.name} • ${PROFILE.role}`,
+        url,
+      });
+      return;
+    } catch {
+      console.log("Share cancelled or failed");
+    }
+  }
+
+  await navigator.clipboard.writeText(url);
+
+  setCopied("profile");
+
+  setTimeout(() => {
+    setCopied(null);
+  }, 1800);
+};
   const handleSaveContact = () => {
     const vcard = [
       "BEGIN:VCARD","VERSION:3.0",
@@ -487,8 +510,24 @@ export default function ProfileCard() {
               padding:"14px 0", cursor:"pointer", textDecoration:"none", transition:"all 0.2s",
             }}>
               <FileText size={15} strokeWidth={2} color={C.textSub} />
-              <span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:600, color:C.textSub }}>Download CV</span>
+              <span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:600, color:C.textSub }}>Resume (PDF)</span>
             </a>
+            <button onClick={shareProfile}  style={{
+              flex:1, display:"flex", alignItems:"center", justifyContent:"center", gap:7,
+              background:C.pill, border:`1px solid ${C.pillBorder}`, borderRadius:12,
+              padding:"14px 0", cursor:"pointer", textDecoration:"none", transition:"all 0.2s",
+            }}>
+  {copied === "profile" ? (
+    <>
+      <Check size={16} />
+      <span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:600, color:C.textSub }}>Check (PDF)</span>
+    </>
+  ) : (
+    <>
+      <Share2 size={16} />
+<span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:600, color:C.textSub }}>Shear (PDF)</span>    </>
+  )}
+</button>
           </div>
 
         {/* </div> */}
