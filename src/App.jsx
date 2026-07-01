@@ -126,22 +126,22 @@ const PROFILE = {
   taps: 248,
   rawPhone: "+201090949310",
   rawEmail: "ahmedabdelelah909493@gmail.com",
-  cvUrl: "/resume.pdf",
+  cvUrl: "https://my-portfolio-2-update.vercel.app/Ahmed_Abdelelah_CV.pdf",
   contacts: [
     { id: "phone",    label: "Phone",    Icon: Phone,        href: "tel:+201090949310",         value: "+20 109 094 9310" },
     { id: "whatsapp", label: "WhatsApp", Icon: WhatsAppIcon, href: "https://wa.me/201090949310", value: "Open WhatsApp Chat" },
-    { id: "email",    label: "Email",    Icon: Mail,         href: "mailto:ahmed@example.com",   value: "ahmed@example.com" },
+    { id: "email",    label: "Email",    Icon: Mail,         href: "mailto:ahmedabdelelah909493@gmail.com",   value: "ahmedabdelelah909493@gmail.com" },
   ],
   socials: [
     { id: "phone",    label: "Phone",    Icon: Phone,        href: "tel:+201090949310",         value: "+20 109 094 9310" },
-    { id: "linkedin",  label: "LinkedIn",  Icon: LinkedinIcon,  href: "https://linkedin.com/in/ahmed-dev", color: "#0A66C2" },
-    { id: "instagram", label: "Instagram", Icon: InstagramIcon, href: "https://instagram.com/ahmed.dev",   color: "#E4405F" },
+    { id: "linkedin",  label: "LinkedIn",  Icon: LinkedinIcon,  href: "https://www.linkedin.com/in/ahmed-abdelelah-771aaa412?utm_source=share_via&utm_content=profile&utm_medium=member_ios", color: "#0A66C2" },
+    { id: "instagram", label: "Instagram", Icon: InstagramIcon, href: "https://instagram.com/ahmed.devhttps://www.instagram.com/a7med.abdelelah?igsh=MTFrdmZjYjZwd3I4ag%3D%3D&utm_source=qr",   color: "#E4405F" },
     { id: "github",    label: "GitHub",    Icon: GithubIcon,    href: "https://github.com/ahmedabdelelah22", color: "#F0F0F0" },
-    { id: "x",         label: "X",         Icon: XIcon,         href: "https://x.com/ahmed_dev",           color: "#E7E7E7" },
-    { id: "whatsapp",  label: "WhatsApp",  Icon: WhatsAppIcon,  href: "https://wa.me/201000000000",        color: "#25D366" },
-    { id: "portfolio", label: "Portfolio", Icon: PortfolioIcon, href: "https://vercel.com/ahmed-abdelelahs-projects/my-portfolio-after-update-2", color: "#D4AF6A" },
-    { id: "portfolio", label: "Facebook", Icon: FacebookIcon, href: "https://vercel.com/ahmed-abdelelahs-projects/my-portfolio-after-update-2", color: "#D4AF6A" },
-    { id: "email",    label: "Email",    Icon: Mail,         href: "mailto:ahmed@example.com",   value: "ahmedabdelelah909493@gmail.com" },
+    { id: "x",         label: "X",         Icon: XIcon,         href: "https://x.com/a7medabdelelah?s=11",           color: "#E7E7E7" },
+    { id: "whatsapp",  label: "WhatsApp",  Icon: WhatsAppIcon,  href: "https://wa.me/201090949310",        color: "#25D366" },
+    { id: "portfolio", label: "Portfolio", Icon: PortfolioIcon, href: "https://my-portfolio-after-update-2.vercel.app/", color: "#D4AF6A" },
+    { id: "facebook",  label: "Facebook",  Icon: FacebookIcon,  href: "https://www.facebook.com/share/199yVMahU8/?mibextid=wwXIfr",           color: "#1877F2" },
+    { id: "email",    label: "Email",    Icon: Mail,         href: "mailto:ahmedabdelelah909493@gmail.com",   value: "ahmedabdelelah909493@gmail.com" },
 
   ],
   payments: [
@@ -285,7 +285,7 @@ export default function ProfileCard() {
           <div style={{ height:3, background:`linear-gradient(90deg,transparent,${C.gold},transparent)` }} />
 
           {/* ── HEADER ── */}
-          <header style={{ padding:"40px 24px 28px", textAlign:"center" }}>
+          <header style={{ padding:"30px 24px 5px", textAlign:"center" }}>
 
             {/* Avatar */}
             <div style={{ width:96, height:96, margin:"0 auto 20px", position:"relative" }}>
@@ -333,26 +333,7 @@ export default function ProfileCard() {
             </p> */}
           </header>
 
-          {/* ── CTAs ── */}
-          <div style={{ padding:"0 20px 24px", display:"flex", gap:10 }}>
-            <button className="save-btn" onClick={handleSaveContact} style={{
-              flex:1, display:"flex", alignItems:"center", justifyContent:"center", gap:7,
-              background:C.gold, border:"none", borderRadius:12,
-              padding:"14px 0", cursor:"pointer", transition:"background 0.2s",
-            }}>
-              <Smartphone size={15} strokeWidth={2.2} color="#0A0A0A" />
-              <span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:700, color:"#0A0A0A" }}>Save Contact</span>
-            </button>
-
-            <a href={PROFILE.cvUrl} download className="cv-btn" style={{
-              flex:1, display:"flex", alignItems:"center", justifyContent:"center", gap:7,
-              background:C.pill, border:`1px solid ${C.pillBorder}`, borderRadius:12,
-              padding:"14px 0", cursor:"pointer", textDecoration:"none", transition:"all 0.2s",
-            }}>
-              <FileText size={15} strokeWidth={2} color={C.textSub} />
-              <span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:600, color:C.textSub }}>Download CV</span>
-            </a>
-          </div>
+        
 
           {/* ── SOCIAL GRID ── */}
           <div style={{ padding:"20px 20px 20px", borderTop:`1px solid ${C.divider}` }}>
@@ -483,6 +464,26 @@ export default function ProfileCard() {
                 </a>
               ))}
             </div>
+          </div>
+            {/* ── CTAs ── */}
+          <div style={{ padding:"0 20px 24px", display:"flex", gap:10 }}>
+            <button className="save-btn" onClick={handleSaveContact} style={{
+              flex:1, display:"flex", alignItems:"center", justifyContent:"center", gap:7,
+              background:C.gold, border:"none", borderRadius:12,
+              padding:"14px 0", cursor:"pointer", transition:"background 0.2s",
+            }}>
+              <Smartphone size={15} strokeWidth={2.2} color="#0A0A0A" />
+              <span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:700, color:"#0A0A0A" }}>Save Contact</span>
+            </button>
+
+            <a href={PROFILE.cvUrl} download className="cv-btn" style={{
+              flex:1, display:"flex", alignItems:"center", justifyContent:"center", gap:7,
+              background:C.pill, border:`1px solid ${C.pillBorder}`, borderRadius:12,
+              padding:"14px 0", cursor:"pointer", textDecoration:"none", transition:"all 0.2s",
+            }}>
+              <FileText size={15} strokeWidth={2} color={C.textSub} />
+              <span style={{ fontFamily:"'Inter',sans-serif", fontSize:13, fontWeight:600, color:C.textSub }}>Download CV</span>
+            </a>
           </div>
 
         </div>
